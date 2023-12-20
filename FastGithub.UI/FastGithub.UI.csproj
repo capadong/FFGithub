@@ -5,7 +5,7 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<OutputType>WinExe</OutputType>
 		<LangVersion>8.0</LangVersion> 
-		<TargetFramework>net45</TargetFramework>
+		<TargetFramework>net462</TargetFramework>
 		<ApplicationIcon>app.ico</ApplicationIcon>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -26,7 +26,7 @@
 		<PackageReference Include="LiveCharts.Wpf" Version="0.9.7">
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.1">
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3">
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 	</ItemGroup>

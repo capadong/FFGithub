@@ -39,6 +39,8 @@ namespace FastGithub.DomainResolve
         /// <returns></returns>
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
+
             try
             {
                 await this.dnscryptProxy.StartAsync(stoppingToken);
@@ -57,6 +59,14 @@ namespace FastGithub.DomainResolve
             {
                 this.logger.LogError(ex, "域名解析异常");
             }
+        }
+
+        private void CurrentDomain_ProcessExit(object? sender, EventArgs e)
+        {
+            Console.WriteLine($"正在停止{nameof(DomainResolveHostedService)}服务");
+            CancellationTokenSource tokenSource = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+
+            this.StopAsync(tokenSource.Token).Wait();
         }
 
         /// <summary>

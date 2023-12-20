@@ -97,7 +97,7 @@ namespace FastGithub
             const string VERSION = @"^\d+\.(\d+.){0,2}\d+";
             var verion = Regex.Match(productionVersion, VERSION).Value;
             var subVersion = productionVersion[verion.Length..];
-            return new ProductionVersion(Version.Parse(verion), subVersion);
+            return new ProductionVersion(Version.Parse(verion.Replace("+",".")), subVersion);
         }
     }
 }

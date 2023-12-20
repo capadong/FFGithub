@@ -2,12 +2,13 @@
 
 	<PropertyGroup>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 		<PackageReference Include="DNS" Version="7.0.0" />
-		<PackageReference Include="WindivertDotnet" Version="1.0.7" />
+		<PackageReference Include="WindivertDotnet" Version="1.1.2" />
 	</ItemGroup>
 
 	<ItemGroup>
